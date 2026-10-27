@@ -179,44 +179,38 @@ h1 .hl{color:var(--blue-hi);}
 .member .mr{font-family:"Barlow Condensed",sans-serif; font-size:14.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); margin-top:2px;}
 
 /* ---------------- ACCESOS ---------------- */
-.links{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px;}
+.links{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px;}
 .lk{
   display:flex; align-items:center; gap:14px; text-decoration:none; background:var(--panel);
   border:1px solid var(--line); border-radius:12px; padding:17px 19px; transition:border-color .15s ease, background .15s ease;
 }
 .lk:hover{border-color:var(--blue); background:var(--panel-2);}
 .lk:focus-visible{outline:2px solid var(--blue); outline-offset:2px;}
-.lk .ic{font-size:21px; flex:none; width:26px; text-align:center;}
-.lk .lt{font-family:"Archivo",sans-serif; font-size:16px; font-weight:700; color:var(--ink); letter-spacing:-.01em;}
-.lk .ls{font-size:14px; color:var(--muted); margin-top:1px;}
+.lk .ic{font-size:24px; flex:none; width:30px; text-align:center;}
+.lk .tx{display:flex; flex-direction:column; gap:3px; min-width:0;}
+.lk .lt{display:block; font-family:"Archivo",sans-serif; font-size:17px; font-weight:700; color:var(--ink); letter-spacing:-.01em; line-height:1.25;}
+.lk .ls{display:block; font-size:15px; color:var(--ink-2); line-height:1.4;}
 .lk .arrow{margin-left:auto; color:var(--muted); font-family:"IBM Plex Mono",monospace;}
 
 /* ---------------- CONTACTO ---------------- */
-.contact{background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:34px 36px;}
-@media (max-width:620px){ .contact{padding:24px 19px;} }
-.fgrid{display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-bottom:15px;}
-@media (max-width:620px){ .fgrid{grid-template-columns:1fr;} }
-label{display:block; font-family:"Barlow Condensed",sans-serif; font-size:14px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:6px;}
-input,textarea,select{
-  width:100%; background:var(--void); border:1px solid var(--line-2); border-radius:9px; padding:11px 13px;
-  color:var(--ink); font-family:"Barlow",sans-serif; font-size:16px;
+.cgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px;}
+.ccard{
+  display:flex; align-items:center; gap:18px; text-decoration:none; color:var(--ink);
+  background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:24px 26px;
+  transition:border-color .15s ease, transform .15s ease, background .15s ease;
 }
-input:focus,textarea:focus,select:focus{outline:none; border-color:var(--blue); box-shadow:0 0 0 3px var(--blue-lo);}
-textarea{resize:vertical; min-height:112px;}
-.fnote{font-size:14px; color:var(--muted); margin:14px 0 0;}
-.fnote a{color:var(--blue-hi);}
-.sent{
-  margin-top:16px; border:1px solid var(--green); background:var(--green-lo); border-radius:11px; padding:15px 17px; color:var(--ink-2); font-size:15.5px;
-}
-.sent[hidden]{display:none !important;}
-.sent b{color:var(--ink);}
-.copybtn{
-  margin-top:11px; font-family:"Barlow Condensed",sans-serif; font-size:15px; font-weight:700;
-  letter-spacing:.07em; text-transform:uppercase; background:transparent; color:var(--ink);
-  border:1px solid var(--line-2); border-radius:7px; padding:7px 15px; cursor:pointer;
-}
-.copybtn:hover{border-color:var(--blue); background:var(--panel-2);}
-.copybtn:focus-visible{outline:2px solid var(--blue); outline-offset:2px;}
+.ccard:hover{transform:translateY(-2px); background:var(--panel-2);}
+.ccard:focus-visible{outline:2px solid var(--blue); outline-offset:3px;}
+.ccard .cic{width:56px; height:56px; border-radius:14px; flex:none; display:flex; align-items:center; justify-content:center;}
+.ccard .cic svg{width:30px; height:30px;}
+.ccard .ctx{display:flex; flex-direction:column; gap:3px; min-width:0;}
+.ccard .ck{font-family:"Barlow Condensed",sans-serif; font-size:14px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);}
+.ccard .cv{font-family:"Archivo",sans-serif; font-size:20px; font-weight:800; letter-spacing:-.01em; overflow-wrap:anywhere;}
+.ccard .cs{font-size:15px; color:var(--ink-2);}
+.ccard .go{margin-left:auto; font-family:"Barlow Condensed",sans-serif; font-size:16px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; white-space:nowrap;}
+.ccard.wa .cic{background:rgba(37,211,102,.14);} .ccard.wa .go{color:#25D366;} .ccard.wa:hover{border-color:#25D366;}
+.ccard.ml .cic{background:var(--blue-lo);} .ccard.ml .go{color:var(--blue-hi);} .ccard.ml:hover{border-color:var(--blue);}
+@media (max-width:520px){ .ccard{padding:20px;} .ccard .go{display:none;} .ccard .cv{font-size:18px;} }
 
 /* ---------------- FOOTER ---------------- */
 footer.f{border-top:1px solid var(--line); padding:34px 0 46px; color:var(--muted); font-size:14.5px;}
@@ -428,37 +422,37 @@ html{scroll-behavior:smooth;}
     <div class="links reveal">
       <a class="lk" href="https://newlogin.alwaysdata.net">
         <span class="ic">🏋️</span>
-        <span><span class="lt">El sistema</span><span class="ls">newlogin.alwaysdata.net</span></span>
+        <span class="tx"><span class="lt">El sistema</span><span class="ls">Entrar a Pulso funcionando</span></span>
         <span class="arrow">→</span>
       </a>
-      <a class="lk" href="https://juanjoybeto.github.io/training-point-documentacion/">
+      <a class="lk" href="https://juanjoybeto.github.io/pulso-documentacion/">
         <span class="ic">📐</span>
-        <span><span class="lt">Documentación</span><span class="ls">Requisitos, modelo de datos y costos</span></span>
+        <span class="tx"><span class="lt">Documentación</span><span class="ls">Requisitos, modelo de datos y costos</span></span>
         <span class="arrow">→</span>
       </a>
-      <a class="lk" href="https://github.com/JuanjoyBeto/training-point">
+      <a class="lk" href="https://github.com/JuanjoyBeto/pulso">
         <span class="ic">💻</span>
-        <span><span class="lt">Código en GitHub</span><span class="ls">github.com/JuanjoyBeto/training-point</span></span>
+        <span class="tx"><span class="lt">Código en GitHub</span><span class="ls">Todo el código fuente del sistema</span></span>
         <span class="arrow">→</span>
       </a>
       <a class="lk" href="https://newlogin.alwaysdata.net/manual_alumno.html">
         <span class="ic">📘</span>
-        <span><span class="lt">Manual del alumno</span><span class="ls">Registrarse, pagar con MercadoPago y anotarse</span></span>
+        <span class="tx"><span class="lt">Manual del alumno</span><span class="ls">Registrarse, pagar con MercadoPago y anotarse</span></span>
         <span class="arrow">→</span>
       </a>
       <a class="lk" href="https://newlogin.alwaysdata.net/manual_administrador.html">
         <span class="ic">📗</span>
-        <span><span class="lt">Manual del administrador</span><span class="ls">Clases, pagos, aptos, avisos y configuración</span></span>
+        <span class="tx"><span class="lt">Manual del administrador</span><span class="ls">Clases, pagos, aptos, avisos y configuración</span></span>
         <span class="arrow">→</span>
       </a>
       <a class="lk" href="https://newlogin.alwaysdata.net/faq.html">
         <span class="ic">❓</span>
-        <span><span class="lt">Preguntas frecuentes</span><span class="ls">Las dudas más comunes, resueltas</span></span>
+        <span class="tx"><span class="lt">Preguntas frecuentes</span><span class="ls">Las dudas más comunes, resueltas</span></span>
         <span class="arrow">→</span>
       </a>
-      <a class="lk" href="https://juanjoybeto.github.io/training-point-documentacion/#s6">
+      <a class="lk" href="https://juanjoybeto.github.io/pulso-documentacion/#s6">
         <span class="ic">📊</span>
-        <span><span class="lt">Carta Gantt</span><span class="ls">Las 82 tareas del proyecto</span></span>
+        <span class="tx"><span class="lt">Carta Gantt</span><span class="ls">Las 82 tareas del proyecto</span></span>
         <span class="arrow">→</span>
       </a>
     </div>
@@ -470,42 +464,20 @@ html{scroll-behavior:smooth;}
   <div class="shell">
     <p class="klabel reveal">Contacto</p>
     <h2 class="big reveal">¿Tenés un gimnasio<br>con el mismo problema?</h2>
-    <p class="slead reveal">Contanos cómo manejás tus clases hoy y te decimos si esto te sirve.</p>
+    <p class="slead reveal">Escribinos por WhatsApp o por mail, contanos cómo manejás tus clases hoy y te mostramos cómo Pulso te puede servir.</p>
 
-    <form class="contact reveal" id="cform" novalidate>
-      <div class="fgrid">
-        <div>
-          <label for="f-nombre">Tu nombre</label>
-          <input type="text" id="f-nombre" name="nombre" required autocomplete="name" placeholder="Nombre y apellido">
-        </div>
-        <div>
-          <label for="f-mail">Tu correo</label>
-          <input type="email" id="f-mail" name="mail" required autocomplete="email" placeholder="nombre@correo.com">
-        </div>
-      </div>
-      <div class="fgrid">
-        <div>
-          <label for="f-lugar">Tu gimnasio o actividad</label>
-          <input type="text" id="f-lugar" name="lugar" placeholder="Nombre del lugar">
-        </div>
-        <div>
-          <label for="f-tema">Sobre qué querés hablar</label>
-          <select id="f-tema" name="tema">
-            <option>Quiero usarlo en mi gimnasio</option>
-            <option>Tengo una duda sobre cómo funciona</option>
-            <option>Soy alumno y necesito ayuda</option>
-            <option>Otra cosa</option>
-          </select>
-        </div>
-      </div>
-      <div>
-        <label for="f-msg">Tu mensaje</label>
-        <textarea id="f-msg" name="mensaje" placeholder="Contanos cómo manejás las reservas y los pagos hoy."></textarea>
-      </div>
-      <p class="fnote" style="margin-bottom:16px" id="fnote">Al enviar se arma tu mensaje listo para copiar y pasárnoslo por privado.</p>
-      <button class="btn" type="submit">Preparar el mensaje</button>
-      <div class="sent" id="sent" hidden></div>
-    </form>
+    <div class="cgrid reveal">
+      <a class="ccard wa" href="https://wa.me/5491154217660?text=%C2%A1Hola%21%20Vi%20Pulso%20y%20me%20interesa%20para%20mi%20gimnasio.%20%C2%BFMe%20cuentan%20c%C3%B3mo%20funciona%3F" target="_blank" rel="noopener">
+        <span class="cic"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#25D366" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.2-3.8 1.2 1.2-3.7-.3-.4a10.4 10.4 0 0 1-1.6-5.6C5.2 9.9 10 5.2 16 5.2s10.8 4.7 10.8 10.6S22 26.4 16 26.4zm5.9-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></span>
+        <span class="ctx"><span class="ck">WhatsApp</span><span class="cv">+54 9 11 5421-7660</span><span class="cs">Escribinos y te contamos cómo usarlo en tu gimnasio</span></span>
+        <span class="go">Escribir →</span>
+      </a>
+      <a class="ccard ml" href="mailto:jajajanene24@gmail.com?subject=Consulta%20sobre%20Pulso&amp;body=Hola%2C%20vi%20Pulso%20y%20me%20interesa%20para%20mi%20gimnasio.%0A%0ANombre%20del%20gimnasio%3A%0AActividades%3A%0ACantidad%20aproximada%20de%20alumnos%3A%0A">
+        <span class="cic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#5C9BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+        <span class="ctx"><span class="ck">Correo</span><span class="cv">jajajanene24@gmail.com</span><span class="cs">Mandanos tu consulta cuando quieras</span></span>
+        <span class="go">Enviar →</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -519,11 +491,6 @@ html{scroll-behavior:smooth;}
 
 <script>
 (function(){
-  /* ====== CONFIGURACIÓN ======
-     Poner acá el correo de contacto del equipo, por ejemplo "equipo@correo.com".
-     Mientras esté vacío, el formulario arma el mensaje para copiar y pegar. */
-  var CONTACTO = "";
-
   /* ---------- demo interactiva ---------- */
   var CLASES = [
     { id: 41, dia: "Lunes 2", hora: "18:00 · Funcional", cupo: 3 },
@@ -616,76 +583,6 @@ html{scroll-behavior:smooth;}
     render();
   });
   render();
-
-  /* ---------- formulario de contacto ---------- */
-  var form = document.getElementById('cform');
-  var sent = document.getElementById('sent');
-  var fnote = document.getElementById('fnote');
-  if (fnote && CONTACTO){
-    fnote.textContent = 'Al enviar se abre tu programa de correo con el mensaje ya escrito, listo para mandar.';
-  }
-  if (form) form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var nombre = (document.getElementById('f-nombre').value || '').trim();
-    var mail   = (document.getElementById('f-mail').value || '').trim();
-    var lugar  = (document.getElementById('f-lugar').value || '').trim();
-    var tema   = document.getElementById('f-tema').value;
-    var msg    = (document.getElementById('f-msg').value || '').trim();
-
-    if (!nombre || !mail){
-      sent.hidden = false;
-      sent.innerHTML = '<b>Falta un dato.</b> Necesitamos tu nombre y tu correo para poder responderte.';
-      return;
-    }
-
-    var cuerpo =
-      'Nombre: ' + nombre + '\n' +
-      'Correo: ' + mail + '\n' +
-      'Gimnasio o actividad: ' + (lugar || '-') + '\n' +
-      'Tema: ' + tema + '\n\n' +
-      (msg || '(sin mensaje)');
-
-    sent.hidden = false;
-
-    if (!CONTACTO){
-      sent.innerHTML = '<b>Listo, ' + nombre.split(' ')[0] + '.</b> Copiá este mensaje y mandánoslo por privado:';
-      var pre = document.createElement('pre');
-      pre.style.cssText = 'white-space:pre-wrap;font-family:IBM Plex Mono,monospace;font-size:13px;' +
-        'background:var(--void);border:1px solid var(--line-2);border-radius:8px;padding:12px 14px;' +
-        'margin:10px 0 0;color:var(--ink-2);overflow-x:auto;';
-      pre.textContent = cuerpo;
-      sent.appendChild(pre);
-      var cb = document.createElement('button');
-      cb.type = 'button';
-      cb.className = 'copybtn';
-      cb.textContent = 'Copiar mensaje';
-      cb.addEventListener('click', function(){
-        var ok = false;
-        try {
-          var ta = document.createElement('textarea');
-          ta.value = cuerpo;
-          ta.setAttribute('readonly','');
-          ta.style.cssText = 'position:absolute;left:-9999px;';
-          document.body.appendChild(ta);
-          ta.select();
-          ok = document.execCommand('copy');
-          document.body.removeChild(ta);
-        } catch (err) { ok = false; }
-        cb.textContent = ok ? '✓ Copiado' : 'Seleccionalo y copialo a mano';
-        setTimeout(function(){ cb.textContent = 'Copiar mensaje'; }, 2600);
-      });
-      sent.appendChild(cb);
-      return;
-    }
-
-    sent.innerHTML = '<b>Listo, ' + nombre.split(' ')[0] + '.</b> Se abre tu correo con el mensaje escrito. ' +
-      'Si no se abre solo, escribinos a <a href="mailto:' + CONTACTO + '">' + CONTACTO + '</a> y pegá lo que completaste.';
-
-    var href = 'mailto:' + CONTACTO +
-      '?subject=' + encodeURIComponent('Consulta desde la web de Pulso') +
-      '&body=' + encodeURIComponent(cuerpo);
-    try { window.location.href = href; } catch (err) { /* el visor puede bloquearlo */ }
-  });
 
   /* ---------- reveal al hacer scroll ---------- */
   var revs = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
